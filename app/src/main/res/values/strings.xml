@@ -2,6 +2,10 @@
     <string name="app_name">Amiritmo</string>
     <string name="new_routine"><font size="30">Nueva Rutina</font>\n\<font size="15">editar nombre</font></string>
     <string name="new_alarm"><font size="30">Nueva Alarma</font>\n\<font size="15">editar nombre</font></string>
+    <string name="sound"><font size="30">Sonido</font></string>
+    <string name="sound_new_alarm"><font size="20">Sonido de nueva alarma</font></string>
+    <string name="melodia"><font size="30">Melodia</font></string>
+    <string name="text_a_voz"><font size="30">Texto a voz</font>\n\<font size="15">Suena la voz diciendo el nombre de la alarma</font></string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

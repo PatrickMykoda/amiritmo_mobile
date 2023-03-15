@@ -13,33 +13,40 @@
         android:theme="@style/Theme.Amiritmo"
         tools:targetApi="31">
         <activity
-            android:name=".AlarmsOfRoutineList"
-            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:name=".ConfigSound"
             android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".AlarmsOfRoutineList"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".ConfigAlarm"
-            android:theme="@style/Theme.AppCompat.NoActionBar"
-            android:exported="false">
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".AlarmsList"
-            android:theme="@style/Theme.AppCompat.NoActionBar"
-            android:exported="false">
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".MainActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

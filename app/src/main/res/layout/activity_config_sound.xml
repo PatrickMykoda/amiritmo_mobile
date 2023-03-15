@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo_config"
+    tools:context=".ConfigSound">
+
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/back_button"
+        android:elevation="30dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_title_bottom"
+        app:layout_constraintEnd_toEndOf="@id/guideline_middle_sound_setting"
+        app:layout_constraintStart_toStartOf="@+id/guideline_radio_start"
+        app:layout_constraintTop_toTopOf="@id/guideline_title_top" />
+
+    <TextView
+        android:id="@+id/title_sound"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/title_list_sound"
+        android:elevation="15dp"
+        android:gravity="left|center_vertical"
+        android:scaleType="centerCrop"
+        android:text="@string/sound_new_alarm"
+        android:textColor="#000000"
+        app:fontFamily="@font/roboto"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_title_bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guideline_title_top" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_title_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.06" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_title_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.17" />
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/ic_baseline_volume_up_24"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_bottom_sound_setting"
+        app:layout_constraintEnd_toEndOf="@id/guideline_middle_sound_setting"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guideline_title_bottom" />
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="269dp"
+        android:layout_height="18dp"
+        android:progressTint="#000000"
+        android:thumbTint="#000000"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_bottom_sound_setting"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guideline_middle_sound_setting"
+        app:layout_constraintTop_toTopOf="@id/guideline_title_bottom" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_middle_sound_setting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.21654502" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_bottom_sound_setting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.27" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_bottom_radio_voz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.37" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_bottom_radio_melodia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.47" />
+
+    <RadioButton
+        android:id="@+id/radioButtonTextoVoz"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_gravity="start"
+        android:layoutDirection="rtl"
+        android:scaleType="centerCrop"
+        android:text="@string/text_a_voz"
+        android:textColor="#000000"
+        app:fontFamily="@font/roboto"
+        android:textAlignment="textStart"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_bottom_radio_voz"
+        app:layout_constraintEnd_toEndOf="@id/guideline_radio_start"
+        app:layout_constraintStart_toStartOf="@id/guideline_radio_end"
+        app:layout_constraintTop_toTopOf="@id/guideline_bottom_sound_setting" />
+
+    <RadioButton
+        android:id="@+id/radioButtonMelodia"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_gravity="start"
+        android:layoutDirection="rtl"
+        android:scaleType="centerCrop"
+        android:text="@string/melodia"
+        android:textColor="#000000"
+        app:fontFamily="@font/roboto"
+        android:textAlignment="textStart"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_bottom_radio_melodia"
+        app:layout_constraintEnd_toEndOf="@id/guideline_radio_start"
+        app:layout_constraintStart_toStartOf="@id/guideline_radio_end"
+        app:layout_constraintTop_toTopOf="@id/guideline_bottom_radio_voz" />
+
+
+    <RadioButton
+        android:id="@+id/radioPicnic"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:text="Picnic"
+        android:textColor="#000000"
+        app:fontFamily="@font/roboto"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_bottom_picnic"
+        app:layout_constraintEnd_toEndOf="@id/guideline_radio_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_radio_start"
+        app:layout_constraintTop_toTopOf="@id/guideline_bottom_radio_melodia" />
+
+    <RadioButton
+        android:id="@+id/radioSerenity"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:text="Serenity"
+        android:textColor="#000000"
+        app:fontFamily="@font/roboto"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_bottom_serenity"
+        app:layout_constraintEnd_toEndOf="@id/guideline_radio_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_radio_start"
+        app:layout_constraintTop_toTopOf="@id/guideline_bottom_picnic" />
+
+    <RadioButton
+        android:id="@+id/radioSunshine"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:text="Sunshine"
+        android:textColor="#000000"
+        app:fontFamily="@font/roboto"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_bottom_sunshine"
+        app:layout_constraintEnd_toEndOf="@id/guideline_radio_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_radio_start"
+        app:layout_constraintTop_toTopOf="@id/guideline_bottom_serenity" />
+
+    <RadioButton
+        android:id="@+id/radioTimeup"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:text="Time up"
+        android:textColor="#000000"
+        app:fontFamily="@font/roboto"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_bottom_timeup"
+        app:layout_constraintEnd_toEndOf="@id/guideline_radio_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_radio_start"
+        app:layout_constraintTop_toTopOf="@id/guideline_bottom_sunshine" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_radio_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_radio_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_bottom_picnic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.57" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_bottom_serenity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.67" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_bottom_sunshine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.77" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_bottom_timeup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.87" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,6 +7,20 @@
     android:background="@drawable/fondo_config"
     tools:context=".ConfigAlarm">
 
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragment_alarm_name_input"
+        android:name="com.example.amiritmo.AlarmNameInput"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:elevation="20dp"
+        android:scaleType="centerCrop"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout="@layout/fragment_alarm_name_input" />
+
     <Button
         android:id="@+id/button_nombre_alarma"
         android:layout_width="0dp"
@@ -16,6 +30,7 @@
         android:gravity="left|center_vertical"
         android:scaleType="centerCrop"
         android:text="@string/new_alarm"
+        android:textColor="#000000"
         app:fontFamily="@font/roboto"
         app:layout_constraintBottom_toBottomOf="@id/guideline_title_bottom"
         app:layout_constraintEnd_toEndOf="parent"
@@ -114,12 +129,12 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/input_card_input"
+        android:fontFamily="@font/roboto"
         android:gravity="center"
         android:inputType="time"
         android:scaleType="centerCrop"
-        android:fontFamily="@font/roboto"
-        android:textColor="#000000"
         android:text="00"
+        android:textColor="#000000"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="@id/guideline_time_input_bottom"
         app:layout_constraintEnd_toEndOf="@id/guideline_hours_end"
@@ -142,7 +157,6 @@
         app:layout_constraintEnd_toEndOf="@id/guideline_minutes_end"
         app:layout_constraintStart_toStartOf="@id/guideline_cancel_end"
         app:layout_constraintTop_toTopOf="@id/guideline_time_input_top" />
-    />
 
     <TextView
         android:id="@+id/textViewMiddle"
@@ -152,10 +166,10 @@
         android:autoSizeMinTextSize="12sp"
         android:autoSizeTextType="uniform"
         android:fontFamily="@font/roboto"
+        android:gravity="center|center_vertical"
+        android:scaleType="centerCrop"
         android:text=":"
         android:textColor="#000000"
-        android:scaleType="centerCrop"
-        android:gravity="center|center_vertical"
         app:layout_constraintBottom_toTopOf="@+id/guideline_time_input_bottom"
         app:layout_constraintEnd_toStartOf="@+id/guideline_cancel_end"
         app:layout_constraintStart_toEndOf="@+id/editTextHour"
@@ -180,7 +194,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.48" />
+        app:layout_constraintGuide_percent="0.48153216" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_minutes_end"
@@ -213,10 +227,10 @@
         android:scaleType="centerCrop"
         android:text="AM"
         android:textColor="#000000"
+        app:layout_constraintBottom_toTopOf="@id/pm"
         app:layout_constraintEnd_toEndOf="@id/guideline_end_am_pm"
         app:layout_constraintStart_toEndOf="@id/guideline_start_am_pm"
-        app:layout_constraintTop_toTopOf="@id/guideline_time_input_top"
-        app:layout_constraintBottom_toTopOf="@id/pm"/>
+        app:layout_constraintTop_toTopOf="@id/guideline_time_input_top" />
 
     <Button
         android:id="@+id/pm"
@@ -228,10 +242,10 @@
         android:scaleType="centerCrop"
         android:text="PM"
         android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_time_input_bottom"
         app:layout_constraintEnd_toEndOf="@id/guideline_end_am_pm"
         app:layout_constraintStart_toEndOf="@id/guideline_start_am_pm"
-        app:layout_constraintTop_toBottomOf="@id/am"
-        app:layout_constraintBottom_toBottomOf="@id/guideline_time_input_bottom" />
+        app:layout_constraintTop_toBottomOf="@id/am" />
 
     <Button
         android:id="@+id/am_hide"
@@ -264,5 +278,383 @@
         app:layout_constraintEnd_toEndOf="@id/guideline_end_am_pm"
         app:layout_constraintStart_toEndOf="@id/guideline_start_am_pm"
         app:layout_constraintTop_toBottomOf="@id/am" />
+
+    <Button
+        android:id="@+id/sunday"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/day_select_button"
+        android:elevation="15dp"
+        android:gravity="center"
+        android:scaleType="centerCrop"
+        android:text="D"
+        android:textColor="#000000"
+        android:textScaleX="1"
+        android:textSize="28sp"
+        app:fontFamily="@font/roboto"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_days_bottom"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/saturday"
+        app:layout_constraintTop_toTopOf="@id/guideline_days_top"
+        app:layout_constraintVertical_bias="0.509" />
+
+    <Button
+        android:id="@+id/monday"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/day_select_button"
+        android:elevation="15dp"
+        android:gravity="center"
+        android:scaleType="centerCrop"
+        android:text="L"
+        android:textColor="#000000"
+        android:textScaleX="1"
+        android:textSize="28sp"
+        app:fontFamily="@font/roboto"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_days_bottom"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@+id/tuesday"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guideline_days_top"
+        app:layout_constraintVertical_bias="0.509" />
+
+    <Button
+        android:id="@+id/tuesday"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/day_select_button"
+        android:elevation="15dp"
+        android:gravity="center"
+        android:scaleType="centerCrop"
+        android:text="M"
+        android:textColor="#000000"
+        android:textScaleX="1"
+        android:textSize="28sp"
+        app:fontFamily="@font/roboto"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_days_bottom"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@+id/wednesday"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/monday"
+        app:layout_constraintTop_toTopOf="@id/guideline_days_top"
+        app:layout_constraintVertical_bias="0.509" />
+
+    <Button
+        android:id="@+id/wednesday"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/day_select_button"
+        android:elevation="15dp"
+        android:gravity="center"
+        android:scaleType="centerCrop"
+        android:text="X"
+        android:textColor="#000000"
+        android:textScaleX="1"
+        android:textSize="28sp"
+        app:fontFamily="@font/roboto"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_days_bottom"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@+id/thursday"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tuesday"
+        app:layout_constraintTop_toTopOf="@id/guideline_days_top"
+        app:layout_constraintVertical_bias="0.509" />
+
+    <Button
+        android:id="@+id/thursday"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/day_select_button"
+        android:elevation="15dp"
+        android:gravity="center"
+        android:scaleType="centerCrop"
+        android:text="J"
+        android:textColor="#000000"
+        android:textScaleX="1"
+        android:textSize="28sp"
+        app:fontFamily="@font/roboto"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_days_bottom"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@+id/friday"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/wednesday"
+        app:layout_constraintTop_toTopOf="@id/guideline_days_top"
+        app:layout_constraintVertical_bias="0.509" />
+
+    <Button
+        android:id="@+id/friday"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/day_select_button"
+        android:elevation="15dp"
+        android:gravity="center"
+        android:scaleType="centerCrop"
+        android:text="V"
+        android:textColor="#000000"
+        android:textScaleX="1"
+        android:textSize="28sp"
+        app:fontFamily="@font/roboto"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_days_bottom"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@+id/saturday"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/thursday"
+        app:layout_constraintTop_toTopOf="@id/guideline_days_top"
+        app:layout_constraintVertical_bias="0.509" />
+
+    <Button
+        android:id="@+id/saturday"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/day_select_button"
+        android:elevation="15dp"
+        android:gravity="center"
+        android:scaleType="centerCrop"
+        android:text="S"
+        android:textColor="#000000"
+        android:textScaleX="1"
+        android:textSize="28sp"
+        app:fontFamily="@font/roboto"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_days_bottom"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@+id/sunday"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/friday"
+        app:layout_constraintTop_toTopOf="@id/guideline_days_top"
+        app:layout_constraintVertical_bias="0.509" />
+
+    <Button
+        android:id="@+id/sunday_hide"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/day_not_selected_button"
+        android:elevation="15dp"
+        android:gravity="center"
+        android:scaleType="centerCrop"
+        android:text="D"
+        android:textColor="#000000"
+        android:textScaleX="1"
+        android:textSize="28sp"
+        android:visibility="invisible"
+        app:fontFamily="@font/roboto"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_days_bottom"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/saturday"
+        app:layout_constraintTop_toTopOf="@id/guideline_days_top"
+        app:layout_constraintVertical_bias="0.509" />
+
+    <Button
+        android:id="@+id/monday_hide"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/day_not_selected_button"
+        android:elevation="15dp"
+        android:gravity="center"
+        android:scaleType="centerCrop"
+        android:text="L"
+        android:textColor="#000000"
+        android:textScaleX="1"
+        android:textSize="28sp"
+        android:visibility="invisible"
+        app:fontFamily="@font/roboto"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_days_bottom"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@+id/tuesday"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guideline_days_top"
+        app:layout_constraintVertical_bias="0.509" />
+
+    <Button
+        android:id="@+id/tuesday_hide"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/day_not_selected_button"
+        android:elevation="15dp"
+        android:gravity="center"
+        android:scaleType="centerCrop"
+        android:text="M"
+        android:textColor="#000000"
+        android:textScaleX="1"
+        android:textSize="28sp"
+        android:visibility="invisible"
+        app:fontFamily="@font/roboto"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_days_bottom"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@+id/wednesday"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/monday"
+        app:layout_constraintTop_toTopOf="@id/guideline_days_top"
+        app:layout_constraintVertical_bias="0.509" />
+
+    <Button
+        android:id="@+id/wednesday_hide"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/day_not_selected_button"
+        android:elevation="15dp"
+        android:gravity="center"
+        android:scaleType="centerCrop"
+        android:text="X"
+        android:textColor="#000000"
+        android:textScaleX="1"
+        android:textSize="28sp"
+        android:visibility="invisible"
+        app:fontFamily="@font/roboto"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_days_bottom"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@+id/thursday"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tuesday"
+        app:layout_constraintTop_toTopOf="@id/guideline_days_top"
+        app:layout_constraintVertical_bias="0.509" />
+
+    <Button
+        android:id="@+id/thursday_hide"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/day_not_selected_button"
+        android:elevation="15dp"
+        android:gravity="center"
+        android:scaleType="centerCrop"
+        android:text="J"
+        android:textColor="#000000"
+        android:textScaleX="1"
+        android:textSize="28sp"
+        android:visibility="invisible"
+        app:fontFamily="@font/roboto"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_days_bottom"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@+id/friday"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/wednesday"
+        app:layout_constraintTop_toTopOf="@id/guideline_days_top"
+        app:layout_constraintVertical_bias="0.509" />
+
+    <Button
+        android:id="@+id/friday_hide"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/day_not_selected_button"
+        android:elevation="15dp"
+        android:gravity="center"
+        android:scaleType="centerCrop"
+        android:text="V"
+        android:textColor="#000000"
+        android:textScaleX="1"
+        android:textSize="28sp"
+        android:visibility="invisible"
+        app:fontFamily="@font/roboto"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_days_bottom"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@+id/saturday"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/thursday"
+        app:layout_constraintTop_toTopOf="@id/guideline_days_top"
+        app:layout_constraintVertical_bias="0.509" />
+
+    <Button
+        android:id="@+id/saturday_hide"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/day_not_selected_button"
+        android:elevation="15dp"
+        android:gravity="center"
+        android:scaleType="centerCrop"
+        android:text="S"
+        android:textColor="#000000"
+        android:textScaleX="1"
+        android:textSize="28sp"
+        android:visibility="invisible"
+        app:fontFamily="@font/roboto"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_days_bottom"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@+id/sunday"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/friday"
+        app:layout_constraintTop_toTopOf="@id/guideline_days_top"
+        app:layout_constraintVertical_bias="0.509" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_days_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.57" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_days_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.64" />
+
+    <Switch
+        android:id="@+id/switch_sound"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:elevation="30dp"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_sound_bottom"
+        app:layout_constraintEnd_toEndOf="@id/guideline_save_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_start_am_pm"
+        app:layout_constraintTop_toTopOf="@id/guideline_sound_top"
+        />
+
+    <TextView
+        android:id="@+id/sonido"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/button_name_edit"
+        android:elevation="15dp"
+        android:gravity="left|center_vertical"
+        android:scaleType="centerCrop"
+        android:text="@string/sound"
+        android:textColor="#000000"
+        app:fontFamily="@font/roboto"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_sound_bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guideline_sound_top" />
+
+    <androidx.constraintlayout.widget.Guideline
+    android:id="@+id/guideline_sound_top"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    app:layout_constraintGuide_percent="0.7" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_sound_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.815" />
+
+    <TextView
+        android:id="@+id/repetir"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="Repetir"
+        android:textColor="#000000"
+        android:padding="10dp"
+        android:gravity="bottom"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_days_top"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/guideline_hours_end"
+        app:layout_constraintTop_toBottomOf="@id/guideline_time_input_bottom"/>
+
+    <FrameLayout
+        android:layout_width="159dp"
+        android:layout_height="9dp"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="609dp">
+
+    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
