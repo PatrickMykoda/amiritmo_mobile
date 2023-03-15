@@ -1,5 +1,6 @@
 package com.example.amiritmo;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -74,6 +75,7 @@ public class NameInput extends Fragment {
                 // here you set what you want to do when user clicks your button,
                 Intent intent = new Intent(getActivity(),AlarmsOfRoutineList.class);
                 getActivity().startActivity(intent);
+                getActivity().overridePendingTransition(android.R.anim.fade_out, android.R.anim.fade_in);
             }
         });
 
@@ -84,6 +86,7 @@ public class NameInput extends Fragment {
                 // here you set what you want to do when user clicks your button,
                 Intent intent = new Intent(getActivity(),AlarmsOfRoutineList.class);
                 getActivity().startActivity(intent);
+                getActivity().overridePendingTransition(android.R.anim.fade_out, android.R.anim.fade_in);
             }
         });
 

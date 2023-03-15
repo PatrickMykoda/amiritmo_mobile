@@ -19,14 +19,36 @@
 
         <gradient
             android:angle="180"
-            android:centerY="0.05"
+            android:centerY="0.02"
             android:startColor="@color/dark_blue"
             android:centerColor="@color/white"
-            android:endColor="@color/white"
+            android:endColor="#00FFFFFF"
             android:type="linear"
             />
 
         <corners android:radius="12dp"/>
     </shape>
 </item>
+    <item>
+        <shape android:shape="rectangle">
+
+            <stroke android:width="1dp" android:color="#679EF0"/>
+            <padding
+                android:left="1dp"
+                android:right="1dp"
+                android:bottom="1dp"
+                android:top="1dp" />
+
+            <gradient
+                android:angle="0"
+                android:centerY="0.02"
+                android:startColor="@color/dark_blue"
+                android:centerColor="@color/white"
+                android:endColor="#00FFFFFF"
+                android:type="linear"
+                />
+
+            <corners android:radius="12dp"/>
+        </shape>
+    </item>
 </layer-list>
