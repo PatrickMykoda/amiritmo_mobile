@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo_config"
+    tools:context=".ConfigAlarm">
+
+    <Button
+        android:id="@+id/button_nombre_alarma"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/button_name_edit"
+        android:elevation="15dp"
+        android:gravity="left|center_vertical"
+        android:scaleType="centerCrop"
+        android:text="@string/new_alarm"
+        app:fontFamily="@font/roboto"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_title_bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guideline_title_top" />
+
+    <Button
+        android:id="@+id/cancel_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/border_cancel"
+        android:elevation="15dp"
+        android:scaleType="centerCrop"
+        android:text="Cancelar"
+        android:textSize="16sp"
+        app:fontFamily="@font/roboto"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_cancel_save_bottom"
+        app:layout_constraintEnd_toEndOf="@id/guideline_cancel_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_cancel_start"
+        app:layout_constraintTop_toTopOf="@id/guideline_cancel_save_top" />
+
+    <Button
+        android:id="@+id/save_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/border_save"
+        android:elevation="15dp"
+        android:scaleType="centerCrop"
+        android:text="Guardar"
+        android:textSize="16sp"
+        app:fontFamily="@font/roboto"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_cancel_save_bottom"
+        app:layout_constraintEnd_toEndOf="@id/guideline_save_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_save_start"
+        app:layout_constraintTop_toTopOf="@id/guideline_cancel_save_top" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_cancel_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_cancel_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.45" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_save_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="visible"
+        app:layout_constraintGuide_percent="0.55" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_save_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_cancel_save_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_cancel_save_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.14" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_title_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.17059484" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_title_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.28619528" />
+
+    <EditText
+        android:id="@+id/editTextHour"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/input_card_input"
+        android:gravity="center"
+        android:inputType="time"
+        android:scaleType="centerCrop"
+        android:fontFamily="@font/roboto"
+        android:textColor="#000000"
+        android:text="00"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_time_input_bottom"
+        app:layout_constraintEnd_toEndOf="@id/guideline_hours_end"
+        app:layout_constraintStart_toEndOf="@id/guideline_cancel_start"
+        app:layout_constraintTop_toTopOf="@id/guideline_time_input_top" />
+
+    <EditText
+        android:id="@+id/editTextMinutes"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/input_card_input"
+        android:fontFamily="@font/roboto"
+        android:gravity="center"
+        android:inputType="time"
+        android:scaleType="centerCrop"
+        android:text="00"
+        android:textColor="#000000"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_time_input_bottom"
+        app:layout_constraintEnd_toEndOf="@id/guideline_minutes_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_cancel_end"
+        app:layout_constraintTop_toTopOf="@id/guideline_time_input_top" />
+    />
+
+    <TextView
+        android:id="@+id/textViewMiddle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:autoSizeMaxTextSize="100sp"
+        android:autoSizeMinTextSize="12sp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/roboto"
+        android:text=":"
+        android:textColor="#000000"
+        android:scaleType="centerCrop"
+        android:gravity="center|center_vertical"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_time_input_bottom"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_cancel_end"
+        app:layout_constraintStart_toEndOf="@+id/editTextHour"
+        app:layout_constraintTop_toTopOf="@+id/guideline_time_input_top" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_hours_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.37" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_time_input_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.33" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_time_input_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.48" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_minutes_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.72" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_start_am_pm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.76" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_end_am_pm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.96" />
+
+    <Button
+        android:id="@+id/am"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/input_card_input"
+        android:fontFamily="@font/roboto"
+        android:gravity="center"
+        android:scaleType="centerCrop"
+        android:text="AM"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end_am_pm"
+        app:layout_constraintStart_toEndOf="@id/guideline_start_am_pm"
+        app:layout_constraintTop_toTopOf="@id/guideline_time_input_top"
+        app:layout_constraintBottom_toTopOf="@id/pm"/>
+
+    <Button
+        android:id="@+id/pm"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/pm_am_button"
+        android:fontFamily="@font/roboto"
+        android:gravity="center"
+        android:scaleType="centerCrop"
+        android:text="PM"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end_am_pm"
+        app:layout_constraintStart_toEndOf="@id/guideline_start_am_pm"
+        app:layout_constraintTop_toBottomOf="@id/am"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_time_input_bottom" />
+
+    <Button
+        android:id="@+id/am_hide"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/pm_am_button"
+        android:fontFamily="@font/roboto"
+        android:gravity="center"
+        android:scaleType="centerCrop"
+        android:text="AM"
+        android:textColor="#000000"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@id/pm"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end_am_pm"
+        app:layout_constraintStart_toEndOf="@id/guideline_start_am_pm"
+        app:layout_constraintTop_toTopOf="@id/guideline_time_input_top" />
+
+    <Button
+        android:id="@+id/pm_hide"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/input_card_input"
+        android:fontFamily="@font/roboto"
+        android:gravity="center"
+        android:scaleType="centerCrop"
+        android:text="PM"
+        android:textColor="#000000"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_time_input_bottom"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end_am_pm"
+        app:layout_constraintStart_toEndOf="@id/guideline_start_am_pm"
+        app:layout_constraintTop_toBottomOf="@id/am" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
