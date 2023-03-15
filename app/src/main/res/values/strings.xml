@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Amiritmo</string>
+    <string name="new_routine"><font size="30">Nueva Rutina</font>\n\<font size="15">editar nombre</font></string>
+    <string name="new_alarm"><font size="30">Nueva Alarma</font>\n\<font size="15">editar nombre</font></string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
