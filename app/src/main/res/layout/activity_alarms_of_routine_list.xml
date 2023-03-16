@@ -40,6 +40,24 @@
         app:layout_constraintTop_toTopOf="@id/guideline_title_top" />
 
     <Button
+        android:id="@+id/button_nombre_alarm_of_routine"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/button_name_edit"
+        android:elevation="15dp"
+        android:gravity="left|center_vertical"
+        android:paddingLeft="15dp"
+        android:scaleType="centerCrop"
+        android:text="@string/new_alarm_of_routine"
+        android:textColor="#000000"
+        android:visibility="invisible"
+        app:fontFamily="@font/roboto"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_alarm_bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guideline_alarm_top" />
+
+    <Button
         android:id="@+id/cancel_button"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -142,6 +160,20 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.28619528" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_alarm_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.3" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_alarm_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.41" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_add_button_bottom"

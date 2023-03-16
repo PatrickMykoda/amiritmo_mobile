@@ -17,6 +17,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Intent intent = getIntent();
+        Boolean routineCreated = intent.getBooleanExtra(AlarmsOfRoutineList.ROUTINE_CREATED, false);
+
+        if (routineCreated == true){
+            Button alarm = (Button) findViewById(R.id.button_new_routine);
+            alarm.setVisibility(View.VISIBLE);
+        }
+
         FloatingActionButton button = (FloatingActionButton) findViewById(R.id.addButton);
         button.setOnClickListener(new View.OnClickListener() {
             @Override

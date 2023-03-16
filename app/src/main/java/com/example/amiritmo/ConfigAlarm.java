@@ -13,6 +13,7 @@ import android.widget.Switch;
 import android.widget.TextView;
 
 public class ConfigAlarm extends AppCompatActivity {
+    public static final String ALARM_CREATED = "com.example.amiritmo.FOR_ROUTINE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,12 +23,33 @@ public class ConfigAlarm extends AppCompatActivity {
         Switch switch_sound = (Switch) findViewById(R.id.switch_sound);
         switch_sound.bringToFront();
 
+        Intent intent = getIntent();
+        Boolean forRoutine = intent.getBooleanExtra(AlarmsOfRoutineList.FOR_ROUTINE, false);
+
         Button cancel = (Button) findViewById(R.id.cancel_button);
         cancel.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                onBackPressed();
+                if (forRoutine == true) {
+                    openAlarmsRoutineList();
+                }
+                else {
+                    openAlarmsList();
+                }
 
+            }
+        });
+
+        Button save = (Button) findViewById(R.id.save_button);
+        save.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+                if (forRoutine == true) {
+                    openAlarmsRoutineListWithAlarm();
+                }
+                else {
+                    openAlarmsListWithAlarm();
+                }
             }
         });
 
@@ -214,6 +236,28 @@ public class ConfigAlarm extends AppCompatActivity {
 
     public void openConfigSound() {
         Intent intent = new Intent(this, ConfigSound.class);
+        startActivity(intent);
+    }
+
+    public void openAlarmsRoutineList() {
+        Intent intent = new Intent(this, AlarmsOfRoutineList.class);
+        startActivity(intent);
+    }
+
+    public void openAlarmsRoutineListWithAlarm() {
+        Intent intent = new Intent(this, AlarmsOfRoutineList.class);
+        intent.putExtra(ALARM_CREATED, true);
+        startActivity(intent);
+    }
+
+    public void openAlarmsList() {
+        Intent intent = new Intent(this, AlarmsList.class);
+        startActivity(intent);
+    }
+
+    public void openAlarmsListWithAlarm() {
+        Intent intent = new Intent(this, AlarmsList.class);
+        intent.putExtra(ALARM_CREATED, true);
         startActivity(intent);
     }
 }
