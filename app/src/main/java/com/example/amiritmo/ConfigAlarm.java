@@ -4,10 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentContainerView;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Switch;
+import android.widget.TextView;
 
 public class ConfigAlarm extends AppCompatActivity {
 
@@ -26,6 +29,12 @@ public class ConfigAlarm extends AppCompatActivity {
                 onBackPressed();
 
             }
+        });
+
+        TextView configSound = (TextView) findViewById(R.id.sonido);
+        configSound.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { openConfigSound();}
         });
 
         Button am = (Button) findViewById(R.id.am);
@@ -201,5 +210,10 @@ public class ConfigAlarm extends AppCompatActivity {
                 sundayHide.setVisibility(View.INVISIBLE);
             }
         });
+    }
+
+    public void openConfigSound() {
+        Intent intent = new Intent(this, ConfigSound.class);
+        startActivity(intent);
     }
 }

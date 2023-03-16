@@ -32,6 +32,7 @@
         android:paddingLeft="15dp"
         android:scaleType="centerCrop"
         android:text="@string/new_routine"
+        android:textColor="#000000"
         app:fontFamily="@font/roboto"
         app:layout_constraintBottom_toBottomOf="@id/guideline_title_bottom"
         app:layout_constraintEnd_toEndOf="parent"
@@ -46,6 +47,7 @@
         android:elevation="15dp"
         android:scaleType="centerCrop"
         android:text="Cancelar"
+        android:textColor="#000000"
         android:textSize="16sp"
         app:fontFamily="@font/roboto"
         app:layout_constraintBottom_toBottomOf="@id/guideline_cancel_save_bottom"
@@ -61,6 +63,7 @@
         android:elevation="15dp"
         android:scaleType="centerCrop"
         android:text="Guardar"
+        android:textColor="#000000"
         android:textSize="16sp"
         app:fontFamily="@font/roboto"
         app:layout_constraintBottom_toBottomOf="@id/guideline_cancel_save_bottom"
@@ -77,8 +80,10 @@
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         tools:layout="@layout/fragment_name_input" />
 
     <androidx.constraintlayout.widget.Guideline

@@ -43,7 +43,7 @@
         android:gravity="center"
         android:text="Alarmas"
         android:textColor="#000000"
-        android:textSize="60dp"
+        android:textSize="50dp"
         app:fontFamily="@font/roboto"
         android:elevation="15dp"
         android:scaleType="centerCrop"

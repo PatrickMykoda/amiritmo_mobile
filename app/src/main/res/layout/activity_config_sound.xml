@@ -105,38 +105,45 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.47" />
 
-    <RadioButton
-        android:id="@+id/radioButtonTextoVoz"
+    <RadioGroup
+        android:id="@+id/radioGroupVoiceMelody"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_gravity="start"
-        android:layoutDirection="rtl"
-        android:scaleType="centerCrop"
-        android:text="@string/text_a_voz"
-        android:textColor="#000000"
-        app:fontFamily="@font/roboto"
-        android:textAlignment="textStart"
-        android:textSize="30dp"
-        app:layout_constraintBottom_toBottomOf="@id/guideline_bottom_radio_voz"
-        app:layout_constraintEnd_toEndOf="@id/guideline_radio_start"
-        app:layout_constraintStart_toStartOf="@id/guideline_radio_end"
-        app:layout_constraintTop_toTopOf="@id/guideline_bottom_sound_setting" />
-
-    <RadioButton
-        android:id="@+id/radioButtonMelodia"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_gravity="start"
-        android:layoutDirection="rtl"
-        android:scaleType="centerCrop"
-        android:text="@string/melodia"
-        android:textColor="#000000"
-        app:fontFamily="@font/roboto"
-        android:textAlignment="textStart"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="@id/guideline_bottom_radio_melodia"
-        app:layout_constraintEnd_toEndOf="@id/guideline_radio_start"
-        app:layout_constraintStart_toStartOf="@id/guideline_radio_end"
-        app:layout_constraintTop_toTopOf="@id/guideline_bottom_radio_voz" />
+        app:layout_constraintEnd_toEndOf="@id/guideline_radio_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_radio_start"
+        app:layout_constraintTop_toTopOf="@id/guideline_bottom_sound_setting">
+
+        <RadioButton
+            android:id="@+id/radioButtonTextoVoz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layoutDirection="rtl"
+            android:scaleType="centerCrop"
+            android:text="@string/text_a_voz"
+            android:textAlignment="textStart"
+            android:textColor="#000000"
+            android:textSize="30dp"
+            android:paddingBottom="20dp"
+            android:onClick="voiceClicked"
+            android:checked="true"
+            app:fontFamily="@font/roboto" />
+
+        <RadioButton
+            android:id="@+id/radioButtonMelodia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layoutDirection="rtl"
+            android:scaleType="centerCrop"
+            android:text="@string/melodia"
+            android:textAlignment="textStart"
+            android:textColor="#000000"
+            android:onClick="melodyClicked"
+            app:fontFamily="@font/roboto" />
+    </RadioGroup>
 
 
     <RadioButton
@@ -146,6 +153,7 @@
         android:scaleType="centerCrop"
         android:text="Picnic"
         android:textColor="#000000"
+        android:visibility="invisible"
         app:fontFamily="@font/roboto"
         app:layout_constraintBottom_toBottomOf="@id/guideline_bottom_picnic"
         app:layout_constraintEnd_toEndOf="@id/guideline_radio_end"
@@ -159,6 +167,7 @@
         android:scaleType="centerCrop"
         android:text="Serenity"
         android:textColor="#000000"
+        android:visibility="invisible"
         app:fontFamily="@font/roboto"
         app:layout_constraintBottom_toBottomOf="@id/guideline_bottom_serenity"
         app:layout_constraintEnd_toEndOf="@id/guideline_radio_end"
@@ -172,6 +181,7 @@
         android:scaleType="centerCrop"
         android:text="Sunshine"
         android:textColor="#000000"
+        android:visibility="invisible"
         app:fontFamily="@font/roboto"
         app:layout_constraintBottom_toBottomOf="@id/guideline_bottom_sunshine"
         app:layout_constraintEnd_toEndOf="@id/guideline_radio_end"
@@ -185,6 +195,7 @@
         android:scaleType="centerCrop"
         android:text="Time up"
         android:textColor="#000000"
+        android:visibility="invisible"
         app:fontFamily="@font/roboto"
         app:layout_constraintBottom_toBottomOf="@id/guideline_bottom_timeup"
         app:layout_constraintEnd_toEndOf="@id/guideline_radio_end"

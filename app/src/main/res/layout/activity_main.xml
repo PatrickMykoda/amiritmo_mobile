@@ -43,7 +43,7 @@
         android:gravity="center"
         android:text="Rutinas"
         android:textColor="#000000"
-        android:textSize="60dp"
+        android:textSize="50dp"
         app:fontFamily="@font/roboto"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
